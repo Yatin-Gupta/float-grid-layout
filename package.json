@@ -1,0 +1,14 @@
+{
+  "name": "seven_one_pattern_saas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch-css": "node-sass sass/main.scss css/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.4"
+  }
+}

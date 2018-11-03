@@ -1,0 +1,56 @@
+.row {
+  max-width: $grid-width;
+  background-color: $row-bck-color;
+  // to center row
+  margin: 0 auto;
+  // apply this margin not only on that row which is last child of its parent
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  [class^="col-"] {
+    float: left;
+    background-color: orangered;
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-1-of-2 {
+    // to use variable in calc we need to put in # statement
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    // to use variable in calc we need to put in # statement
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
+
+  .col-1-of-4 {
+    // to use variable in calc we need to put in # statement
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .col-2-of-3 {
+    // to use variable in calc we need to put in # statement
+    width: calc(
+      2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-2-of-4 {
+    // to use variable in calc we need to put in # statement
+    width: calc(
+      2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-3-of-4 {
+    // to use variable in calc we need to put in # statement
+    width: calc(
+      3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal}
+    );
+  }
+}
